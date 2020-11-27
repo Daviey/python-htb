@@ -912,6 +912,7 @@ class HackTheBox(Cmd):
         with tempfile.NamedTemporaryFile() as ovpn:
             # Write the configuration to a file
             ovpn.write(self.cnxn.lab.config)
+            ovpn.flush()
 
             # Import the connection w/ Network Manager CLI
             p = subprocess.run(
